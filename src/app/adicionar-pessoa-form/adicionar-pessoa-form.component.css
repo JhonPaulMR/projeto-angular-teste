@@ -1,0 +1,42 @@
+div {
+    margin-bottom: 40px;
+  }
+  
+  h3 {
+    font-size: 1.8rem; /* Aumentar subtítulo */
+    color: var(--text-primary-dark);
+    margin-bottom: 1.5rem; /* Aumentar margem */
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--angular-red); /* Linha de destaque abaixo do título */
+    display: inline-block; /* Para a borda não ocupar a largura toda */
+  }
+  
+  .form-controls {
+    display: flex;
+    gap: 2rem; /* Aumentar espaço */
+    align-items: center;
+  }
+  
+  input[type="text"] {
+    flex-grow: 1;
+    /* Herda estilos globais, ajustes finos se necessário */
+  }
+  
+  button {
+    white-space: nowrap;
+    margin-top: 1.5rem;
+    padding: 12px 25px; /* Aumentar padding do botão específico */
+    /* Herda estilos globais */
+  }
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 0 1.5rem 0;
+    background-color: var(--dark-bg-secondary);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada para dark mode */
+    border-radius: 10px;
+    border: 1px solid var(--dark-border-color);
+  }
+  

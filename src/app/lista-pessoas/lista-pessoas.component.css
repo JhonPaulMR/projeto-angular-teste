@@ -1,0 +1,90 @@
+/* src/app/lista-pessoas/lista-pessoas.component.css */
+
+h3 {
+    font-size: 1.8rem;
+    color: var(--text-primary-dark);
+    margin-bottom: 1.5rem;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--angular-magenta); /* Linha de destaque com outra cor do gradiente */
+    display: inline-block;
+  }
+  
+  .table-container {
+    overflow-x: auto; /* Para tabelas responsivas em telas pequenas (já existente) */
+    max-height: 16.5rem;  /* Defina uma altura máxima para a tabela. Ajuste conforme necessário. */
+    overflow-y: auto;  /* Adiciona a barra de rolagem vertical quando o conteúdo exceder max-height */
+    border-radius: 6px; /* Garante que o arredondamento seja visível mesmo com scroll */
+    border: 1px solid var(--dark-border-color); /* Adiciona uma borda sutil ao container do scroll */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2) inset; /* Sombra interna sutil para dar profundidade ao scroll */
+    margin-bottom: 5rem;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse; /* Remove espaços entre células */
+    /* A tabela não precisa mais de background-color, border-radius e overflow:hidden aqui,
+       pois o .table-container cuidará disso para o scroll.
+       Mantenha box-shadow se quiser sombra na tabela em si,
+       ou remova se a sombra do .table-container for suficiente. */
+    /* background-color: var(--dark-bg-elements); */
+    /* border-radius: 6px; */
+    /* overflow: hidden; */
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
+  }
+  
+  th, td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--dark-border-color);
+  }
+  
+  th {
+    background-color: var(--dark-bg-secondary);
+    color: var(--angular-red);
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: sticky; /* Faz o cabeçalho da tabela grudar no topo durante a rolagem */
+    top: 0;           /* Necessário para position: sticky funcionar */
+    z-index: 1;       /* Garante que o cabeçalho fique acima do conteúdo da tabela durante o scroll */
+  }
+  
+  /* Estilo para o último th para evitar sobreposição com a barra de scroll (se houver) */
+
+  
+  
+  tbody tr {
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  tbody tr:hover {
+    background-color: #383838;
+  }
+  
+  /* A primeira linha de dados logo abaixo do cabeçalho não precisa de borda superior se o cabeçalho já tem uma inferior */
+  
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+  
+  td {
+    color: var(--text-primary-dark);
+  }
+  
+  td:first-child {
+    color: var(--text-secondary-dark);
+    font-weight: 500;
+    width: 50px;
+    text-align: center;
+  }
+  
+  .lista-vazia-mensagem {
+    color: var(--text-secondary-dark);
+    font-style: italic;
+    padding: 20px;
+    text-align: center;
+    background-color: var(--dark-bg-elements);
+    border-radius: 6px;
+    margin-top: 1rem;
+  }

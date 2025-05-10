@@ -1,0 +1,22 @@
+<div>
+    <h3>Lista de Pessoas</h3>
+    <div class="table-container">
+      <table *ngIf="pessoas.length > 0; else listaVaziaTabela">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nome</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pessoa of pessoas; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ pessoa }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ng-template #listaVaziaTabela>
+      <p class="lista-vazia-mensagem">Nenhuma pessoa adicionada ainda.</p>
+    </ng-template>
+  </div>

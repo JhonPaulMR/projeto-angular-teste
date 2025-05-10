@@ -1,0 +1,10 @@
+<div class="form-container">
+    <h3>Adicionar Nova Pessoa</h3>
+    <input
+      type="text"
+      [(ngModel)]="nomePessoa"
+      placeholder="Nome da pessoa"
+      (keyup.enter)="adicionarPessoa()"
+    />
+    <button (click)="adicionarPessoa()">Adicionar</button>
+  </div>
