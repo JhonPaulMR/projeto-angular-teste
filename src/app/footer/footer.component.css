@@ -1,0 +1,37 @@
+
+.page-footer {
+  /* Estilos principais já definidos em styles.css */
+  padding-top: 20px; /* Garante um espaçamento interno superior */
+}
+
+.page-footer h5 {
+  /* Estilo já definido em styles.css */
+  text-shadow: 2px 2px #000000;
+}
+
+.page-footer p {
+  /* Estilo já definido em styles.css */
+  line-height: 1.6;
+}
+
+.page-footer ul li a {
+  color: #A0A0A0 !important; /* Cor mais suave para links no footer */
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.page-footer ul li a:hover {
+  color: #FFB700 !important; /* Amarelo no hover */
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  /* Estilo já definido em styles.css */
+  font-size: 0.8rem;
+  padding: 20px 0 !important; /* Ajuste o padding */
+}
+
+.footer-copyright a {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}

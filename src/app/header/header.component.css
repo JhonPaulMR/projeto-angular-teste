@@ -1,0 +1,50 @@
+
+.nav-wrapper {
+  /* Estilos já definidos em styles.css, mas pode adicionar específicos aqui se necessário */
+  padding: 0 10px; /* Adiciona um pouco de padding lateral */
+}
+
+.brand-logo {
+  /* Estilo já definido em styles.css */
+  text-shadow: 2px 2px #000000; /* Sombra para dar um efeito 8-bit */
+}
+
+#nav-mobile li a, .sidenav li a {
+  /* Estilos já definidos em styles.css */
+  text-transform: uppercase; /* Para um visual mais "arcade" */
+}
+
+#nav-mobile li a:hover, .sidenav li a:hover {
+  /* Estilo de hover já definido em styles.css */
+  text-decoration: none; /* Garante que não haja sublinhado no hover */
+}
+
+.sidenav-trigger i {
+  color: #FFFFFF; /* Cor do ícone do menu hambúrguer */
+  font-size: 2rem; /* Tamanho do ícone */
+}
+
+/* Ajustes para o Sidenav */
+.sidenav {
+  /* Estilos já definidos em styles.css */
+  padding-top: 20px;
+}
+
+.sidenav li > a > i.material-icons {
+  color: #FF4136 !important; /* Cor dos ícones no Sidenav */
+}
+
+.sidenav .user-view {
+  margin-bottom: 0;
+}
+
+.sidenav .user-view .background {
+  /*futuramente uma logo ou fundo personalizado*/
+}
+
+.sidenav .user-view .name, .sidenav .user-view .email {
+  font-weight: normal; /* A fonte pixelada já é "bold" por natureza */
+  font-size: 0.9rem;
+  color: #FFFFFF !important;
+  text-shadow: 1px 1px #000000;
+}

@@ -1,1 +1,139 @@
-/* You can add global styles to this file, and also import other style files */
+
+body {
+  font-family: 'Press Start 2P', cursive; /* Fonte pixelada padrão */
+  background-color: #212121; /* Um cinza escuro para o fundo, remetendo a consoles antigos */
+  color: #FFFFFF; /* Texto branco para contraste */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Press Start 2P', cursive;
+  color: #FF4136; /* Vermelho Nintendo para títulos */
+}
+
+a {
+  color: #00A4E4; /* Um azul vibrante para links, inspirado em interfaces de jogos */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #FFB700; /* Amarelo para hover, comum em menus de jogos */
+}
+
+/* Estilização da barra de rolagem para um look mais retro (opcional, pode variar entre navegadores) */
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #333; /* Fundo da barra de rolagem */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #FF4136; /* Cor do "polegar" da barra de rolagem (vermelho) */
+  border-radius: 0px; /* Sem bordas arredondadas para manter o estilo pixelado */
+  border: 2px solid #212121; /* Borda para o polegar */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #424242; /* Fundo da trilha da barra de rolagem */
+}
+
+.container {
+  width: 90%; /* Ajuste conforme necessário */
+  max-width: 1200px; /* Limite máximo para telas grandes */
+  margin: 0 auto;
+}
+
+/* Ajustes para Materialize com tema retrô */
+.nav-wrapper {
+  background-color: #dc0000 !important; /* Cor de fundo da navbar */
+  border-bottom: 4px solid #f8342a; /* Borda inferior vermelha pixelada */
+}
+
+.brand-logo {
+  font-size: 1.8rem !important; /* Ajuste o tamanho da fonte do logo */
+  padding-left: 15px !important;
+  color: #FFFFFF !important;
+}
+
+.brand-logo:hover {
+  color: #FFB700 !important;
+}
+
+#nav-mobile li a, .sidenav li a {
+  font-size: 0.9rem !important; /* Tamanho da fonte dos itens de menu */
+  color: #E0E0E0 !important; /* Cor dos itens de menu */
+}
+
+#nav-mobile li a:hover, .sidenav li a:hover {
+  background-color: #FF4136 !important; /* Fundo vermelho no hover */
+  color: #FFFFFF !important;
+}
+
+.sidenav {
+  background-color: #303030 !important; /* Fundo do sidenav */
+  border-right: 4px solid #FF4136;
+}
+
+.sidenav .material-icons {
+  color: #E0E0E0 !important;
+}
+
+.page-footer {
+  background-color: #1a1a1a !important; /* Cor de fundo do footer */
+  border-top: 4px solid #FF4136; /* Borda superior vermelha pixelada */
+  padding-top: 20px; /* Espaçamento interno */
+}
+
+.page-footer .footer-copyright {
+  background-color: #0a0a0a !important; /* Cor de fundo da seção de copyright */
+  padding: 15px 0;
+}
+
+.page-footer h5 {
+  color: #FF4136 !important; /* Cor dos títulos no footer */
+}
+
+.page-footer p, .page-footer .grey-text.text-lighten-4 {
+  color: #BDBDBD !important; /* Cor do texto no footer */
+  font-size: 0.8rem;
+}
+
+.btn, .btn-large, .btn-small {
+  background-color: #FF4136 !important; /* Cor de fundo dos botões */
+  color: #FFFFFF !important;
+  font-family: 'Press Start 2P', cursive;
+  border: 2px solid #000000;
+  box-shadow: 3px 3px 0px #000000; /* Sombra para efeito 2D */
+  text-transform: uppercase;
+  border-radius: 0 !important; /* Sem bordas arredondadas */
+}
+
+.btn:hover, .btn-large:hover, .btn-small:hover {
+  background-color: #E7000F !important; /* Cor mais escura no hover */
+  box-shadow: 1px 1px 0px #000000;
+  transform: translate(2px, 2px); /* Efeito de botão pressionado */
+}
+
+/* Efeito de "scanlines" para um toque mais retrô no conteúdo principal */
+main::before {
+  content: " ";
+  display: block;
+  position: fixed; /* Ou absolute, dependendo do efeito desejado */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0,0,0,0),
+    rgba(0,0,0,0) 1px,
+    rgba(0,0,0,0.05) 2px, /* Ajuste a opacidade e o tamanho das linhas */
+    rgba(0,0,0,0.05) 3px
+  );
+  pointer-events: none; /* Para que o overlay não interfira com cliques */
+  z-index: 9999; /* Para ficar sobre outros elementos, se necessário */
+  opacity: 0.5; /* Ajuste a intensidade geral do efeito */
+}
