@@ -1,0 +1,170 @@
+/* Estilos para o container principal, tentando imitar o tema VNes */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+
+.vnes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: #1a1a1a; /* Fundo escuro */
+  color: #fff; /* Texto branco */
+  font-family: "Press Start 2P", "Courier New", Courier, monospace; /* Fonte pixelada, com fallback */
+  padding: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.vnes-logo {
+  margin-bottom: 30px;
+  border: 3px solid #ff0000; /* Borda vermelha no logo */
+  border-radius: 8px;
+}
+
+.vnes-container h2 {
+  color: #ff0000; /* Título em vermelho */
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  font-size: 1.8em;
+  letter-spacing: 2px;
+}
+
+.vnes-form {
+  background-color: #2c2c2c; /* Fundo do formulário um pouco mais claro */
+  padding: 30px;
+  border-radius: 8px;
+  border: 2px solid #ff0000; /* Borda vermelha no formulário */
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #ccc; /* Cor do label */
+  font-size: 0.9em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  width: calc(100% - 20px);
+  padding: 12px 10px;
+  border: 2px solid #555;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  font-family: "Courier New", Courier, monospace; /* Fonte monoespaçada para inputs */
+  font-size: 1em;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus {
+  outline: none;
+  border-color: #ff0000; /* Borda vermelha ao focar */
+  box-shadow: 0 0 8px rgba(255, 0, 0, 0.3);
+}
+
+/* Estilo para inputs inválidos */
+.invalid-input {
+  border-color: #ff4d4d !important; /* Vermelho mais claro para erro */
+  background-color: #4d3232;
+}
+
+.error-message {
+  color: #ff4d4d; /* Cor da mensagem de erro */
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+
+.vnes-button {
+  background-color: #cc0000; /* Botão vermelho escuro */
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "Press Start 2P", "Courier New", Courier, monospace;
+  font-size: 1em;
+  width: 100%;
+  transition: background-color 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.vnes-button:hover:not(:disabled) {
+  background-color: #ff0000; /* Vermelho mais claro no hover */
+}
+
+.vnes-button:disabled {
+  background-color: #555; /* Cor para botão desabilitado */
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.feedback-message {
+  margin-top: 20px;
+  color: #00ff00; /* Verde para sucesso */
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.feedback-message:not(:empty) {
+  /* Adiciona padding se houver mensagem */
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #333;
+  border: 1px solid #00ff00;
+}
+
+/* Se a mensagem for de erro (ex: senhas não coincidem) */
+.feedback-message.error {
+  /* Você precisaria adicionar esta classe dinamicamente no TS se quisesse cores diferentes */
+  color: #ff4d4d;
+  border-color: #ff4d4d;
+}
+
+.toggle-button {
+  margin-top: 25px;
+  background: none;
+  border: none;
+  color: #aaa; /* Cor mais sutil para o botão de alternar */
+  cursor: pointer;
+  text-decoration: underline;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9em;
+}
+
+.toggle-button:hover {
+  color: #ff0000; /* Vermelho no hover */
+}
+
+.feedback-message {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9em;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  width: calc(100% - 22px); /* Ajusta para padding e borda */
+  box-sizing: border-box;
+}
+
+.feedback-message.success {
+  color: #00ff00; /* Verde para sucesso */
+  background-color: rgba(0, 255, 0, 0.1);
+  border-color: #00dd00; /* Um verde um pouco mais escuro para a borda */
+}
+
+.feedback-message.error {
+  color: #ff4d4d; /* Vermelho para erro */
+  background-color: rgba(255, 77, 77, 0.1);
+  border-color: #cc0000; /* Um vermelho mais escuro para a borda */
+}

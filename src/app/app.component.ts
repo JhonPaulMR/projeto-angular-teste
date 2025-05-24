@@ -1,12 +1,17 @@
+// src/app/app.component.ts
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { LoginRegisterComponent } from './login-register/login-register.component'; // VERIFIQUE ESTE CAMINHO
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [
+    LoginRegisterComponent // Certifique-se que está aqui
+    // RouterOutlet, se estiver usando rotas
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'vnes-login';
+  title = 'SuaApp';
 }

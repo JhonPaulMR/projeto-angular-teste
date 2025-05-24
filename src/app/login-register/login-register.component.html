@@ -1,0 +1,67 @@
+<div class="vnes-container">
+  <img [src]="logoUrl" alt="VNes Logo" class="vnes-logo">
+
+  <h2>{{ pageTitle }}</h2>
+
+  <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm" class="vnes-form">
+    <div *ngIf="!isLoginMode">
+      <div class="form-group">
+        <label for="username">Nome de Usuário:</label>
+        <input type="text" id="username" name="username" [(ngModel)]="username" required #nameInput="ngModel"
+               [class.invalid-input]="nameInput.invalid && nameInput.touched">
+        <div *ngIf="nameInput.invalid && nameInput.touched" class="error-message">
+          Nome de usuário é obrigatório.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" [(ngModel)]="email" required email #emailInput="ngModel"
+             [class.invalid-input]="emailInput.invalid && emailInput.touched">
+      <div *ngIf="emailInput.invalid && emailInput.touched" class="error-message">
+        <span *ngIf="emailInput.errors?.['required']">Email é obrigatório.</span>
+        <span *ngIf="emailInput.errors?.['email']">Formato de email inválido.</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Senha:</label>
+      <input type="password" id="password" name="password" [(ngModel)]="password" required minlength="6" #passwordInput="ngModel"
+             [class.invalid-input]="passwordInput.invalid && passwordInput.touched">
+      <div *ngIf="passwordInput.invalid && passwordInput.touched" class="error-message">
+        <span *ngIf="passwordInput.errors?.['required']">Senha é obrigatória.</span>
+        <span *ngIf="passwordInput.errors?.['minlength']">A senha deve ter pelo menos 6 caracteres.</span>
+      </div>
+    </div>
+
+    <div *ngIf="!isLoginMode" class="form-group">
+      <label for="confirmPassword">Confirmar Senha:</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword" required #confirmPasswordInput="ngModel"
+             [class.invalid-input]="confirmPasswordInput.invalid && confirmPasswordInput.touched || (password !== confirmPassword && confirmPasswordInput.touched)">
+      <div *ngIf="confirmPasswordInput.invalid && confirmPasswordInput.touched && confirmPasswordInput.errors?.['required']" class="error-message">
+        Confirmação de senha é obrigatória.
+      </div>
+       <div *ngIf="password !== confirmPassword && confirmPasswordInput.touched && !confirmPasswordInput.errors?.['required']" class="error-message">
+        As senhas não coincidem.
+      </div>
+    </div>
+
+    <button type="submit" class="vnes-button" [disabled]="loginForm.invalid || (isLoginMode ? false : password !== confirmPassword)">
+      {{ isLoginMode ? 'Entrar' : 'Cadastrar' }}
+    </button>
+  </form>
+
+  <p *ngIf="feedbackMessageText"
+     class="feedback-message"
+     [class.success]="feedbackMessageType === 'success'"
+     [class.error]="feedbackMessageType === 'error'">
+    {{ feedbackMessageText }}
+  </p>
+
+  <button (click)="toggleMode()" class="toggle-button">
+    {{ isLoginMode ? 'Não tem uma conta? Cadastre-se' : 'Já tem uma conta? Faça Login' }}
+  </button>
+</div>
+
+
